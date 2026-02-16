@@ -742,23 +742,23 @@
 
     <script src="js/script.js"></script>
 
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" loop autoplay>
         <source src="music/fonseca.mp3" type="audio/mpeg">
         Tu navegador no soporta audio.
     </audio>
 
     <script>
         const music = document.getElementById("bgMusic");
-
         music.volume = 0.3; // 30% volumen
 
-        function startMusic() {
-            music.play().catch(() => {});
-            document.removeEventListener("click", startMusic);
-        }
-
-        document.addEventListener("click", startMusic);
+        // Intentamos reproducir automáticamente al cargar
+        window.addEventListener("load", () => {
+            music.play().catch((error) => {
+                console.log("El navegador bloqueó la reproducción automática:", error);
+            });
+        });
     </script>
+
 
 </body>
 </html>
