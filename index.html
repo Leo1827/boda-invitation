@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda de Antoni y Karen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="m-0 p-0">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="heart"></div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="music/Fonseca.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <!--------------------- HEADER -->
+    <section id="hero"
+        class="relative h-screen w-full flex items-center justify-center text-white overflow-hidden"
+        style="
+        background-image: url('images/principal.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 960px;
+    ">
+
+        <!-- Overlay oscuro -->
+        <div class="absolute inset-0 bg-black/70"></div>
+
+            <!-- Desvanecido inferior real -->
+            <div class="pointer-events-none absolute bottom-0 left-0 w-full h-56 
+                        bg-gradient-to-b from-transparent via-white/10 to-white">
+            </div>
+
+            <!-- Flores decorativas esquina 1 (arriba, secuenciales) -->
+            <img src="images/flor2.png"
+                class="absolute top-0 left-0 w-[15rem] opacity-40 fade-down delay-100"
+                alt="flor2">
+            <img src="images/flor1.png"
+                class="absolute top-0 left-0 w-[15rem] opacity-40 fade-down delay-200"
+                alt="flor1">
+            <img src="images/flor3.png"
+                class="absolute top-0 left-0 w-[15rem] opacity-40 fade-down delay-300"
+                alt="flor3">
+
+            <!-- Flores decorativas esquina 2 (abajo, secuenciales) -->
+
+            <img src="images/flor2.png"
+            class="absolute bottom-0 right-0 w-[15rem] opacity-40 fade-up delay-100"
+            alt="flor2">
+            <img src="images/flor1.png"
+                class="absolute bottom-0 right-0 w-[15rem] opacity-40 fade-up delay-200"
+                alt="flor1">
+            <img src="images/flor3.png"
+                class="absolute bottom-0 right-0 w-[15rem] opacity-40 fade-up delay-300"
+                alt="flor3">
+
+
+            <!-- Contenido -->
+            <div class="relative text-center px-6 max-w-3xl">
+
+            <!-- Fecha -->
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <div class="h-px w-10 md:w-[150px] bg-white/60"></div>
+                <p class="text-sm md:text-3xl font-semibold tracking-widest">17.05.2026</p>
+                <div class="h-px w-10 md:w-[150px] bg-white/60"></div>
+            </div>
+
+            <!-- Nombres -->
+            <h1 class="text-4xl md:text-7xl font-semibold flex items-center justify-center gap-4 mb-8">
+                <span>Antoni</span>
+                <span class="bg-[#BFA880] w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full text-white text-xl md:text-4xl">
+                &
+                </span>
+                <span>Karen</span>
+            </h1>
+
+            <!-- Línea decorativa -->
+            <div class="h-px w-32 md:w-[500px] bg-white/60 mx-auto mb-8"></div>
+
+            <!-- Frase -->
+            <p class="text-lg md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
+                <span class="text-5xl">“</span>
+                Es mejor ser dos que uno,<br class="hidden md:block">
+                porque ambos pueden ayudarse mutuamente a lograr el éxito <span class="text-5xl">”</span>
+                <br>
+                <span class="text-sm">Eclesiastés 4:9</span>
+            </p>
+
+            <!-- Flecha animada hacia abajo -->
+            <div class="mt-8 flex justify-center">
+                <svg class="w-10 h-10 text-white bounce-down" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--------------------- COUNTDOWN -->
+    <section class="relative bg-white countdown-section pt-40 pb-28 ">
+
+        <!-- Separador superpuesto -->
+        <div class="absolute md:-top-52 -top-12 mt-2 left-0 md:w-full z-10">
+            <img src="images/separador.png" class="w-full" alt="">
+        </div>
+
+        <div class="relative z-20 countdown-wrapper -mt-40 z-30">
+            <div class="countdown-circle shadow-xl">
+                <!-- Líneas decorativas -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+
+                    <div class="absolute w-[389px] h-[389px] border-2 border-[#BFA880]/40 
+                                rounded-[60%_40%_55%_45%] rotate-6"></div>
+
+                    <div class="absolute w-[350px] h-[350px] border border-[#BFA880]/30 
+                                rounded-[40%_60%_45%_55%] -rotate-12"></div>
+
+                    <div class="absolute w-[390px] h-[440px] border border-[#BFA880]/50 
+                                rounded-[55%_45%_60%_40%] rotate-3"></div>
+
+                </div>
+
+                <h2 class="countdown-title">Faltan</h2>
+
+                <div class="countdown-time">
+                    <div>
+                        <strong id="days">00</strong>
+                        <span>días</span>
+                    </div>
+
+                    <span class="opacity-40">|</span>
+
+                    <div>
+                        <strong id="hours">00</strong>
+                        <span>hs</span>
+                    </div>
+
+                    <span class="opacity-40">|</span>
+
+                    <div>
+                        <strong id="minutes">00</strong>
+                        <span>min</span>
+                    </div>
+
+                    <span class="opacity-40">|</span>
+
+                    <div>
+                        <strong id="seconds">00</strong>
+                        <span>seg</span>
+                    </div>
+                </div>
+
+                <div class="countdown-heart">❤</div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ------------------ CEREMONIA -->
+    <section class="bg-[#e9e3db] py-24 relative overflow-hidden">
+
+        <!-- Desvanecido superior -->
+        <div class="absolute top-0 left-0 w-full h-24 
+                    bg-gradient-to-b from-white to-transparent z-10"></div>
+
+        <!-- Desvanecido inferior -->
+        <div class="absolute bottom-0 left-0 w-full h-24 
+                    bg-gradient-to-t from-white to-transparent z-10"></div>
+
+        <!-- Líneas decorativas superiores -->
+        <div class="absolute top-0 left-0 w-full opacity-70">
+            <svg viewBox="0 0 1440 250" class="w-full h-48" preserveAspectRatio="none">
+
+                <path fill="none" stroke="#bfa880" stroke-width="3"
+                    d="M0,150 C300,60 1100,220 1440,130" />
+
+                <path fill="none" stroke="#a8c0b8" stroke-width="2.5"
+                    d="M0,120 C400,200 900,40 1440,140" />
+
+                <path fill="none" stroke="#bfa880" stroke-width="2"
+                    d="M0,170 C350,100 1000,200 1440,110" />
+
+                <path fill="none" stroke="#a8c0b8" stroke-width="1.8"
+                    d="M0,100 C500,180 800,60 1440,160" />
+
+                <path fill="none" stroke="#bfa880" stroke-width="2.2"
+                    d="M0,180 C450,120 900,220 1440,150" />
+
+            </svg>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto text-center px-6">
+
+            <!-- Ícono circular -->
+            <div class="flex justify-center mb-10">
+                <div class="relative w-40 h-40 md:w-48 md:h-48 
+                            rounded-full bg-[#f7f5f2] shadow-xl 
+                            flex items-center justify-center overflow-hidden">
+
+                    <!-- Anillos desordenados -->
+                    <div class="absolute w-[85%] h-[85%] border-2 border-[#bfa880] 
+                                rounded-[60%_40%_55%_45%] rotate-6"></div>
+
+                    <div class="absolute w-[75%] h-[90%] border border-[#a8c0b8] 
+                                rounded-[40%_60%_45%_55%] -rotate-12"></div>
+
+                    <div class="absolute w-[95%] h-[70%] border border-[#bfa880]/60 
+                                rounded-[55%_45%_60%_40%] rotate-3"></div>
+
+                    <div class="absolute w-[70%] h-[70%] border border-[#a8c0b8]/50 
+                                rounded-[45%_55%_50%_50%] -rotate-6"></div>
+
+                    <!-- GIF animado -->
+                    <img src="https://i.gifer.com/1PyX.gif"
+                        class="w-52 md:w-52 object-contain z-10"
+                        alt="decoración">
+
+                </div>
+            </div>    
+
+            <!-- Banner -->
+            <div class="inline-block relative mb-10">
+                <div class="banner-inner text-white px-14 py-4">
+                    <span class="text-2xl tracking-wide">Ceremonia</span>
+                </div>
+            </div>
+
+            <!-- Información -->
+            <div class="space-y-8 text-[#5c5a57]">
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Día</h3>
+                    <p class="text-lg mb-4">Sábado 17 de Mayo - 4pm</p>
+
+                    <h3 class="text-2xl font-semibold mb-2">Lugar</h3>
+                    <p class="text-lg">Ibagué - Tolima</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Flores decorativas esquina 2 (abajo, secuenciales) -->
+        <img src="images/flor2.png"
+            class="absolute bottom-0 right-0 w-[15rem] opacity-100 hidden md:block fade-up delay-100"
+            alt="flor2">
+        <img src="images/flor1.png"
+            class="absolute bottom-0 right-0 w-[15rem] opacity-40 hidden md:block fade-up delay-200"
+            alt="flor1">
+        <img src="images/flor3.png"
+            class="absolute bottom-0 right-0 w-[15rem] opacity-40 hidden md:block fade-up delay-300"
+            alt="flor3">
+
+            <!-- Plantas decorativas sección -->
+            <div id="plantsSection"
+                class="absolute left-0 bottom-0 w-[160px] md:w-[220px] opacity-70 pointer-events-none">
+
+                <svg viewBox="0 0 200 500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Tallo principal -->
+                    <path d="M120 500 C100 420, 150 350, 110 250 C90 200, 130 120, 100 0"
+                        stroke="#bfa880"
+                        stroke-width="3"
+                        fill="none"/>
+
+                    <!-- Hojas finas -->
+                    <path d="M110 360 C170 340, 170 300, 120 320"
+                        fill="#cfded6"/>
+
+                    <path d="M95 300 C30 280, 40 240, 95 260"
+                        fill="#a8c0b8"/>
+
+                    <path d="M110 200 C170 180, 160 150, 120 170"
+                        fill="#d6c3a1"/>
+
+                    <path d="M100 140 C40 130, 50 90, 95 110"
+                        fill="#bfa880"/>
+
+                </svg>
+            </div>
+
+    </section>
+
+    <!-- ------------------ GALERY -->
+    <section class="relative overflow-hidden">
+
+        <!-- Contenido -->
+        <div class="relative z-10 text-center bg-imge py-10 mx-auto">
+            <!-- Desvanecido superior -->
+            <div class="absolute top-0 left-0 w-full h-24 
+                    bg-gradient-to-b from-white to-transparent z-99"></div>
+
+            <!-- Desvanecido inferior -->
+            <div class="absolute bottom-0 left-0 w-full h-24 
+                    bg-gradient-to-t from-white to-transparent z-10"></div>
+
+            <!-- Título -->
+            <h2 class="text-3xl md:text-4xl mt-32 font-semibold text-gray-800 mb-6">
+                Retratos de Nuestro Amor
+            </h2>
+
+            <!-- Subtítulo -->
+            <p class="text-lg md:text-2xl text-[#bfa880] font-light mb-12">
+                Un minuto, un segundo, un instante que queda en la eternidad
+            </p>
+
+            <!-- Ícono -->
+            <div class="flex justify-center mb-16">
+                <div class="w-20 h-20 rounded-full border-2 border-[#bfa880] flex items-center justify-center text-[#bfa880] text-3xl">
+                    <img src="https://cdn.pixabay.com/animation/2023/06/13/15/13/15-13-23-8_512.gif" alt="">
+                </div>
+            </div>
+
+            <!-- Carrusel 3 visibles -->
+            <div class="relative w-full mx-auto overflow-hidden px-6 md:px-0">
+
+                <!-- Slides -->
+                <div id="carousel" class="flex transition-transform duration-700 ease-in-out">
+
+                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
+                        <img src="images/galery1.jpeg"
+                            class="w-full h-[20rem] object-cover shadow-lg">
+                    </div>
+
+                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
+                        <img src="images/galery2.jpeg"
+                            class="w-full h-[20rem] object-cover shadow-lg">
+                    </div>
+
+                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
+                        <img src="images/galery3.jpeg"
+                            class="w-full h-[20rem] object-cover shadow-lg">
+                    </div>
+
+                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
+                        <img src="images/galery4.jpeg"
+                            class="w-full h-[20rem] object-cover shadow-lg">
+                    </div>
+
+                </div>
+
+                <!-- Botón izquierda -->
+                <button onclick="prevSlide()"
+                    class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 w-9 h-9 rounded-full shadow-md flex items-center justify-center">
+                    ❮
+                </button>
+
+                <!-- Botón derecha -->
+                <button onclick="nextSlide()"
+                    class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 w-9 h-9 rounded-full shadow-md flex items-center justify-center">
+                    ❯
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ------------------ VESTIMENTA -->
+    <section class="bg-[#f7f5f2] py-24 relative overflow-hidden">
+
+        <!-- Desvanecido superior -->
+        <div class="absolute top-0 left-0 w-full h-24 
+                    bg-gradient-to-b from-white to-transparent"></div>
+
+        <!-- Desvanecido inferior -->
+        <div class="absolute bottom-0 left-0 w-full h-24 
+                    bg-gradient-to-t from-white to-transparent"></div>
+
+        <!-- Líneas decorativas superiores -->
+        <div class="absolute top-0 left-0 w-full opacity-40">
+            <svg viewBox="0 0 1440 200" class="w-full h-32" preserveAspectRatio="none">
+                <path fill="none" stroke="#bfa880" stroke-width="3"
+                    d="M0,120 C300,60 1140,180 1440,100" />
+                <path fill="none" stroke="#a8c0b8" stroke-width="3"
+                    d="M0,90 C360,160 1080,40 1440,130" />
+            </svg>
+        </div>
+
+        <!-- Plantas izquierda -->
+        <div class="absolute left-0 bottom-0 opacity-60 animate-plant">
+            <svg width="140" height="220" viewBox="0 0 200 300" fill="none">
+                <path d="M100 300 C80 200, 120 150, 100 50" stroke="#bfa880" stroke-width="3" fill="none"/>
+                <ellipse cx="85" cy="180" rx="25" ry="12" fill="#a8c0b8"/>
+                <ellipse cx="115" cy="120" rx="25" ry="12" fill="#bfa880"/>
+            </svg>
+        </div>
+
+        <!-- Plantas derecha -->
+        <div class="absolute right-0 bottom-0 opacity-60 animate-plant-delayed">
+            <svg width="140" height="220" viewBox="0 0 200 300" fill="none">
+                <path d="M100 300 C120 200, 80 150, 100 50" stroke="#bfa880" stroke-width="3" fill="none"/>
+                <ellipse cx="115" cy="180" rx="25" ry="12" fill="#a8c0b8"/>
+                <ellipse cx="85" cy="120" rx="25" ry="12" fill="#bfa880"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+
+            <!-- Título -->
+            <h2 class="text-3xl md:text-4xl font-semibold text-[#5c5a57] mb-6">
+                Código de Vestimenta
+            </h2>
+
+            <div class="h-px w-24 bg-[#bfa880] mx-auto mb-12"></div>
+
+            <!-- Card -->
+            <div class="bg-white shadow-xl rounded-2xl p-10 md:p-14 
+                        max-w-2xl mx-auto border border-[#e6dfd6] relative overflow-hidden">
+
+                <!-- Líneas internas decorativas -->
+                <svg class="absolute inset-0 w-full h-full opacity-10 pointer-events-none"
+                    viewBox="0 0 400 400" preserveAspectRatio="none">
+                    <path d="M0,200 C100,150 300,250 400,200" 
+                        stroke="#bfa880" stroke-width="4" fill="none"/>
+                    <path d="M0,150 C120,220 280,100 400,170" 
+                        stroke="#a8c0b8" stroke-width="4" fill="none"/>
+                </svg>
+
+                <!-- Icono SVG vestimenta -->
+                <div class="flex justify-center mb-6 relative z-10">
+                    <div class="w-16 h-16 text-[#bfa880]">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 10 L24 6 L32 14 L40 6 L48 10 L44 22 L36 18 L32 22 L28 18 L20 22 Z"/>
+                            <path d="M24 22 L24 50 L40 50 L40 22"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-semibold text-[#bfa880] mb-4 relative z-10">
+                    Casual Elegante
+                </h3>
+
+                <p class="text-lg md:text-xl text-[#5c5a57] leading-relaxed relative z-10">
+                    Lo más importante es tu presencia; ven elegante pero lo 
+                    suficientemente cómodo para disfrutar.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ------------------ REGALO -->
+    <section class="relative bg-[#fff] py-24 overflow-hidden">
+
+        <!-- Decoración hoja derecha -->
+        <div class="absolute right-0 top-0 h-full flex items-center opacity-40 pointer-events-none">
+            <img src="https://images.vexels.com/media/users/3/222665/isolated/preview/4ee562332310f401b2fd607e311592d3-blaetter-verzweigen-sich-ohne-farbige-handgezeichnete-blaetter.png?w=360" alt="decoración hojas" class="h-[80%] object-contain">
+        </div>
+
+        <!-- Desvanecido inferior -->
+        <div class="absolute bottom-0 left-0 w-full h-24 
+                    bg-gradient-to-t from-white to-transparent"></div>
+
+        <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+
+            <h2 class="text-5xl font-serif text-gray-800 mb-6">
+            Regalos
+            </h2>
+
+            <p class="text-[#b6a46d] text-lg mb-8">
+            Si deseas regalarnos algo más que tu hermosa presencia...
+            </p>
+
+            <!-- Icono regalo -->
+            <div class="flex justify-center mb-10">
+                <svg width="120" height="120" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Sombra -->
+                <ellipse cx="100" cy="170" rx="60" ry="12" fill="#000" opacity="0.08"/>
+                <!-- Caja -->
+                <rect x="40" y="80" width="120" height="90" rx="12" fill="#BFA880"/>
+                <!-- Tapa -->
+                <rect x="35" y="65" width="130" height="30" rx="10" fill="#A88F6C"/>
+                <!-- Cinta vertical -->
+                <rect x="92" y="65" width="16" height="105" fill="#ffffff"/>
+                <!-- Cinta horizontal -->
+                <rect x="35" y="90" width="130" height="16" fill="#ffffff"/>
+                <!-- Moño -->
+                <path d="M100 60 
+                        C85 35, 60 40, 78 65
+                        C90 80, 100 72, 100 72
+                        C100 72, 110 80, 122 65
+                        C140 40, 115 35, 100 60 Z"
+                        fill="#ffffff"/>
+
+                </svg>
+
+            </div>
+
+            <!-- Botón -->
+            <button 
+                onclick="openModal()"
+                class="bg-white px-8 py-3 rounded-full shadow-md text-[#b6a46d] tracking-wide hover:shadow-lg transition duration-300">
+                VER MÁS
+            </button>
+
+        </div>
+    </section>
+
+    <!-- ------------------ RESERVA -->
+    <section class="relative w-full overflow-hidden">
+
+        <!-- Overlay oscuro -->
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <!-- Líneas decorativas sobre la montaña -->
+        <div class="absolute top-0 left-0 w-full pointer-events-none z-20">
+            <svg viewBox="0 0 1440 160" class="w-full h-32" preserveAspectRatio="none">
+                
+                <!-- Línea 1 -->
+                <path d="M0,90 C300,40 1100,150 1440,80"
+                    fill="none"
+                    stroke="#bfa880"
+                    stroke-width="3"
+                    opacity="0.6" />
+
+                <!-- Línea 2 -->
+                <path d="M0,60 C400,130 900,10 1440,100"
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    opacity="0.4" />
+
+                <!-- Línea 3 -->
+                <path d="M0,110 C500,20 1000,180 1440,70"
+                    fill="none"
+                    stroke="#a8c0b8"
+                    stroke-width="4"
+                    opacity="0.5" />
+
+            </svg>
+        </div>
+
+
+        <!-- Forma superior -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+            <svg viewBox="0 0 1440 120" class="w-full h-24" preserveAspectRatio="none">
+            <path fill="#fff" d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32V0H0Z"></path>
+            </svg>
+        </div>
+
+        <!-- Imagen Parallax -->
+        <div 
+            class="h-[800px] bg-fixed bg-center bg-cover flex items-center justify-center"
+            style="background-image: url('images/finalimage.jpeg');"
+        >
+            <div class="absolute inset-0"></div>
+
+            <!-- Contenido encima -->
+            <div class="relative z-10 text-center text-white px-6">
+                <h2 class="text-2xl md:text-3xl font-serif mb-4">
+                    Lo más importante de este gran día es compartirlo con las personas que amamos. 
+                </h2>
+                <p class="max-w-2xl mx-auto text-lg opacity-90">
+                    ¡Reserva la fecha! Estamos contando los días para celebrar juntos.
+                </p>
+
+                <!-- SVG Reserva -->
+                <div class="flex justify-center mt-8">
+                    <svg class="w-16 h-16 text-[#bfa880] animate-pulse" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8 7V3m8 4V3m-9 8h10m-13 9h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+
+                <!-- Botón -->
+                <div class="mt-6">
+                    <button onclick="openModalTwo()"
+                        class="bg-[#bfa880] hover:bg-[#a88f6c] text-white px-8 py-3 rounded-full shadow-lg transition duration-300">
+                        Confirmar asistencia a la ceremonia
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Forma inferior -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg viewBox="0 0 1440 120" class="w-full h-24" preserveAspectRatio="none">
+            <path fill="#f5f1eb" d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32V0H0Z"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <!-- MODAL 1-->
+    <div id="giftModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden items-center justify-center z-50">
+
+        <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 relative animate-fadeIn">
+
+            <!-- Botón cerrar -->
+            <button onclick="closeModal()" 
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl">
+            ✕
+            </button>
+            
+                <!-- Ícono circular -->
+                <div class="flex justify-center mb-10">
+                    <div class="relative w-40 h-40 md:w-32 md:h-32 
+                                rounded-full bg-[#f7f5f2] shadow-xl 
+                                flex items-center justify-center overflow-hidden">
+
+                        <!-- Anillos desordenados -->
+                        <div class="absolute w-[85%] h-[85%] border-2 border-[#bfa880] 
+                                    rounded-[60%_40%_55%_45%] rotate-6"></div>
+
+                        <div class="absolute w-[75%] h-[90%] border border-[#a8c0b8] 
+                                    rounded-[40%_60%_45%_55%] -rotate-12"></div>
+
+                        <div class="absolute w-[95%] h-[70%] border border-[#bfa880]/60 
+                                    rounded-[55%_45%_60%_40%] rotate-3"></div>
+
+                        <div class="absolute w-[70%] h-[70%] border border-[#a8c0b8]/50 
+                                    rounded-[45%_55%_50%_50%] -rotate-6"></div>
+
+                        <!-- GIF animado -->
+                        <img src="https://static.wixstatic.com/media/8205d6_6c963b71d48d4211b569f06dabe630b0~mv2.gif"
+                            class="w-20 md:w-20 object-contain z-10"
+                            alt="decoración">
+
+                    </div>
+                </div> 
+
+            <h3 class="text-2xl font-serif text-center mb-4 text-gray-800">
+                Información de Regalos
+            </h3>
+
+            <p class="text-gray-600 text-center mb-6">
+                Tu presencia es nuestro mejor regalo.  
+                Pero si deseas hacernos un obsequio, puedes hacerlo aquí:
+            </p>
+
+            <div class="bg-[#f8f6f2] p-4 rounded-lg text-center text-xl text-gray-700">
+                <p><strong>Lluvia de sobres</strong></p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL 2-->
+    <div id="reservaModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+
+        <div class="bg-white w-[90%] md:w-[450px] rounded-[40px] p-10 relative text-center shadow-2xl">
+
+            <!-- Botón cerrar -->
+            <button onclick="closeModalTwo()" 
+                class="absolute top-4 right-6 text-gray-400 hover:text-black text-2xl">
+                &times;
+            </button>
+
+            <h3 class="text-2xl font-semibold mb-4 text-[#5c5a57]">
+                ¿Asistes a la ceremonia?
+            </h3>
+
+            <p class="text-gray-500 mb-8">
+                Confirma tu asistencia agregando la fecha a tu calendario.
+            </p>
+
+            <!-- BOTÓN PRINCIPAL -->
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Antoni+y+Karen&dates=20260517T210000Z/20260517T230000Z&details=Reserva+la+fecha+para+nuestra+boda&location=Ibagué+-+Tolima"
+                target="_blank"
+                class="block w-full bg-[#bfa880] hover:bg-[#a88f6c] text-white py-3 rounded-full transition duration-300 shadow-lg">
+                Agregar a Google Calendar
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+
+        const music = document.getElementById("bgMusic");
+        music.volume = 3; // 40% volumen
+
+        function startMusic() {
+            music.play().catch(() => {});
+            document.removeEventListener("click", startMusic);
+        }
+
+        document.addEventListener("click", startMusic);
+        
+        let index = 0;
+
+        function updateCarousel() {
+            const carousel = document.getElementById("carousel");
+            const slides = carousel.children;
+            const slideWidth = slides[0].offsetWidth;
+
+            carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+            const carousel = document.getElementById("carousel");
+            const slides = carousel.children;
+
+            if (index < slides.length - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            const carousel = document.getElementById("carousel");
+            const slides = carousel.children;
+
+            if (index > 0) {
+                index--;
+            } else {
+                index = slides.length - 1;
+            }
+
+            updateCarousel();
+        }
+
+        window.addEventListener("resize", updateCarousel);
+
+        function openModalTwo() {
+            document.getElementById("reservaModal").classList.remove("hidden");
+            document.getElementById("reservaModal").classList.add("flex");
+        }
+
+        function closeModalTwo() {
+            document.getElementById("reservaModal").classList.add("hidden");
+            document.getElementById("reservaModal").classList.remove("flex");
+        }
+
+        // Cerrar al hacer click fuera
+        window.onclick = function(event) {
+            const modal = document.getElementById("reservaModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+
+    <script src="js/script.js"></script>
+
+
+</body>
+</html>
