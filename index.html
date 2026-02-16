@@ -811,23 +811,40 @@
 
     <script src="js/script.js"></script>
 
+    <!-- ------------------ BOTÓN DE MÚSICA CON GIF ------------------ -->
+    <button id="musicBtn" class="fixed top-4 right-4 w-12 h-12 bg-white/80 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition">
+        <!-- GIF animado de música -->
+        <img id="musicGif" src="https://cdn-icons-png.flaticon.com/512/2469/2469072.png" alt="Música" class="w-8 h-8"/>
+    </button>
+
+    <!-- ------------------ AUDIO ------------------ -->
     <audio id="bgMusic" loop>
         <source src="music/fonseca.mp3" type="audio/mpeg">
         Tu navegador no soporta audio.
     </audio>
 
     <script>
-        const music = document.getElementById("bgMusic");
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+    const gif = document.getElementById("musicGif");
 
-        music.volume = 0.3; // 30% volumen
+    music.volume = 0.3; // 30% volumen
+    let isPlaying = false;
 
-        function startMusic() {
+    btn.addEventListener("click", () => {
+        if (isPlaying) {
+            music.pause();
+            isPlaying = false;
+            gif.style.opacity = 0.5; // opcional: se ve más apagado cuando está en pausa
+        } else {
             music.play().catch(() => {});
-            document.removeEventListener("click", startMusic);
+            isPlaying = true;
+            gif.style.opacity = 1; // opacidad completa cuando suena
         }
-
-        document.addEventListener("click", startMusic);
+    });
     </script>
+
+
 
 </body>
 </html>
