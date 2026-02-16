@@ -30,6 +30,7 @@
         background-image: url('/images/principal.jpg');
         background-size: cover;
         background-position: right;
+        background-attachment: fixed;
         height: 960px;
     ">
 
@@ -555,11 +556,9 @@
 
         <!-- Imagen Parallax -->
         <div 
-            class="h-[800px] bg-fixed bg-center bg-cover flex items-center justify-center"
-            style="background-image: url('images/finalimage.jpeg'); 
-            background-position: right;
-            background-attachment: fixed; background-repeat: no-repeat; "
-        >
+            class="h-[800px] bg-cover bg-center no-fixed-mobile flex items-center justify-center"
+            style="background-image: url('/images/finalimage.jpeg'); background-position: right; background-repeat: no-repeat;">
+
             <div class="absolute inset-0"></div>
 
             <!-- Contenido encima -->
@@ -649,17 +648,15 @@
 
             </svg>
         </div>
-        <!-- Fondo con overlay usando <img> -->
-        <div class="absolute inset-0 w-full h-full">
-            <!-- Imagen de fondo -->
-            <img src="/images/footer.png" 
-                class="w-full h-full object-cover object-center md:object-right"
-                alt="Footer">
-
-            <!-- Overlay -->
+        <!-- Fondo con overlay -->
+        <div 
+            class="absolute inset-0 bg-center"
+            style="background-image: url('/images/footer2.png'); background-size: cover;
+            background-position: right;
+            background-attachment: fixed;">
+            <!-- Overlay para aclarar la imagen -->
             <div class="absolute inset-0 bg-white bg-opacity-30"></div>
         </div>
-
 
         <!-- Contenido centrado -->
         <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
