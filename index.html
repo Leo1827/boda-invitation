@@ -649,14 +649,17 @@
 
             </svg>
         </div>
-        <!-- Fondo con overlay -->
-        <div 
-            class="absolute inset-0 bg-center bg-cover"
-            id="footerBg"
-            style="background-image: url('/images/footer.png'); background-position: right;">
-            <!-- Overlay para aclarar la imagen -->
+        <!-- Fondo con overlay usando <img> -->
+        <div class="absolute inset-0 w-full h-full">
+            <!-- Imagen de fondo -->
+            <img src="/images/footer.png" 
+                class="w-full h-full object-cover object-center md:object-right"
+                alt="Footer">
+
+            <!-- Overlay -->
             <div class="absolute inset-0 bg-white bg-opacity-30"></div>
         </div>
+
 
         <!-- Contenido centrado -->
         <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
