@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boda de Antoni y Karen</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicon.ico">
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fuente elegante -->
@@ -18,10 +22,6 @@
         <div class="heart"></div>
     </div>
 
-    <audio id="bgMusic" loop>
-        <source src="music/Fonseca.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-    </audio>
 
     <!--------------------- HEADER -->
     <section id="hero"
@@ -680,16 +680,6 @@
     </div>
 
     <script>
-
-        const music = document.getElementById("bgMusic");
-        music.volume = 3; // 40% volumen
-
-        function startMusic() {
-            music.play().catch(() => {});
-            document.removeEventListener("click", startMusic);
-        }
-
-        document.addEventListener("click", startMusic);
         
         let index = 0;
 
@@ -751,6 +741,23 @@
 
     <script src="js/script.js"></script>
 
+    <audio id="bgMusic" loop>
+        <source src="music/Fonseca.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+
+        music.volume = 0.3; // 30% volumen
+
+        function startMusic() {
+            music.play().catch(() => {});
+            document.removeEventListener("click", startMusic);
+        }
+
+        document.addEventListener("click", startMusic);
+    </script>
 
 </body>
 </html>
