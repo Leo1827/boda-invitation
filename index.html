@@ -5,134 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boda de Antoni y Karen</title>
 
-    <!-- Favicons -->
-    <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" href="images/favicon.ico">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fuente elegante -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
- <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="m-0 p-0">
-    <!-- Preloader -->
+<body>
     <div id="preloader">
         <div class="heart"></div>
     </div>
 
-    <!--------------------- HEADER -->
-        <section id="hero"
-            class="relative h-screen w-full flex items-center justify-center text-white overflow-hidden"
-            style="
-            background-image: url('/images/principal.jpg');
-            background-size: cover;
-            background-position: right;
-            height: 960px;
-        ">
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-fade-bottom"></div>
 
+        <img src="images/flor2.png" class="flower-top fade-down delay-100" alt="flor2">
+        <img src="images/flor1.png" class="flower-top fade-down delay-200" alt="flor1">
+        <img src="images/flor3.png" class="flower-top fade-down delay-300" alt="flor3">
 
-        <!-- Overlay oscuro -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <img src="images/flor2.png" class="flower-bottom fade-up delay-100" alt="flor2">
+        <img src="images/flor1.png" class="flower-bottom fade-up delay-200" alt="flor1">
+        <img src="images/flor3.png" class="flower-bottom fade-up delay-300" alt="flor3">
 
-            <!-- Desvanecido inferior real -->
-            <div class="pointer-events-none absolute bottom-0 left-0 w-full h-56 
-                        bg-gradient-to-b from-transparent via-white/10 to-white">
+        <div class="hero-content">
+            <div class="hero-date-wrapper">
+                <div class="line-short"></div>
+                <p class="hero-date">17.05.2026</p>
+                <div class="line-short"></div>
             </div>
 
-            <!-- Flores decorativas esquina 1 (arriba, secuenciales) -->
-            <img src="images/flor2.png"
-                class="absolute top-0 left-0 w-[15rem] opacity-40 fade-down delay-100"
-                alt="flor2">
-            <img src="images/flor1.png"
-                class="absolute top-0 left-0 w-[15rem] opacity-40 fade-down delay-200"
-                alt="flor1">
-            <img src="images/flor3.png"
-                class="absolute top-0 left-0 w-[15rem] opacity-40 fade-down delay-300"
-                alt="flor3">
-
-            <!-- Flores decorativas esquina 2 (abajo, secuenciales) -->
-
-            <img src="images/flor2.png"
-            class="absolute bottom-0 right-0 w-[15rem] opacity-40 fade-up delay-100"
-            alt="flor2">
-            <img src="images/flor1.png"
-                class="absolute bottom-0 right-0 w-[15rem] opacity-40 fade-up delay-200"
-                alt="flor1">
-            <img src="images/flor3.png"
-                class="absolute bottom-0 right-0 w-[15rem] opacity-40 fade-up delay-300"
-                alt="flor3">
-
-
-            <!-- Contenido -->
-            <div class="relative text-center px-6 max-w-3xl">
-
-            <!-- Fecha -->
-            <div class="flex items-center justify-center gap-4 mb-6">
-                <div class="h-px w-10 md:w-[150px] bg-white/60"></div>
-                <p class="text-sm md:text-3xl font-semibold tracking-widest">17.05.2026</p>
-                <div class="h-px w-10 md:w-[150px] bg-white/60"></div>
-            </div>
-
-            <!-- Nombres -->
-            <h1 class="text-4xl md:text-7xl font-semibold flex items-center justify-center gap-4 mb-8">
+            <h1 class="hero-title">
                 <span>Antoni</span>
-                <span class="bg-[#BFA880] w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full text-white text-xl md:text-4xl">
-                &
-                </span>
+                <span class="ampersand-circle">&amp;</span>
                 <span>Karen</span>
             </h1>
 
-            <!-- Línea decorativa -->
-            <div class="h-px w-32 md:w-[500px] bg-white/60 mx-auto mb-8"></div>
+            <div class="line-wide"></div>
 
-            <!-- Frase -->
-            <p class="text-lg md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-                <span class="text-5xl">“</span>
-                Es mejor ser dos que uno,<br class="hidden md:block">
-                porque ambos pueden ayudarse mutuamente a lograr el éxito <span class="text-5xl">”</span>
+            <p class="hero-quote">
+                <span class="quote-mark">“</span>
+                Es mejor ser dos que uno,<br>
+                porque ambos pueden ayudarse mutuamente a lograr el éxito <span class="quote-mark">”</span>
                 <br>
-                <span class="text-sm">Eclesiastés 4:9</span>
+                <span class="quote-sub">Eclesiastés 4:9</span>
             </p>
 
-            <!-- Flecha animada hacia abajo -->
-            <div class="mt-8 flex justify-center">
+            <div class="arrow-wrapper">
                 <a href="#count">
-                    <svg class="w-10 h-10 text-white bounce-down" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="icon-arrow bounce-down" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </a>
             </div>
-
         </div>
-
     </section>
 
-    <!--------------------- COUNTDOWN -->
-    <section class="relative bg-white countdown-section pt-40 pb-28 ">
-
-        <!-- Separador superpuesto -->
-        <div class="absolute md:-top-52 -top-12 mt-2 left-0 md:w-full z-10">
-            <img src="images/separador.png" class="w-full" alt="">
+    <section class="countdown-section">
+        <div class="separator-wrapper">
+            <img src="images/separador.png" class="separator-img" alt="">
         </div>
 
-        <div class="relative z-20 countdown-wrapper -mt-40 z-30">
-            <div  id="count" class="countdown-circle shadow-xl">
-                <!-- Líneas decorativas -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-
-                    <div class="absolute w-[289px] h-[289px] border-2 border-[#BFA880]/40 
-                                rounded-[60%_40%_55%_45%] rotate-6"></div>
-
-                    <div class="absolute w-[250px] h-[250px] border border-[#BFA880]/30 
-                                rounded-[40%_60%_45%_55%] -rotate-12"></div>
-
-                    <div class="absolute w-[290px] h-[290px] border border-[#BFA880]/50 
-                                rounded-[55%_45%_60%_40%] rotate-3"></div>
-
-                </div>
-
+        <div class="countdown-wrapper">
+            <div id="count" class="countdown-circle">
                 <h2 class="countdown-title">Faltan</h2>
 
                 <div class="countdown-time">
@@ -140,23 +76,17 @@
                         <strong id="days">00</strong>
                         <span>días</span>
                     </div>
-
-                    <span class="opacity-40">|</span>
-
+                    <span style="opacity: 0.4;">|</span>
                     <div>
                         <strong id="hours">00</strong>
                         <span>hs</span>
                     </div>
-
-                    <span class="opacity-40">|</span>
-
+                    <span style="opacity: 0.4;">|</span>
                     <div>
                         <strong id="minutes">00</strong>
                         <span>min</span>
                     </div>
-
-                    <span class="opacity-40">|</span>
-
+                    <span style="opacity: 0.4;">|</span>
                     <div>
                         <strong id="seconds">00</strong>
                         <span>seg</span>
@@ -166,308 +96,119 @@
                 <div class="countdown-heart">❤</div>
             </div>
         </div>
-
     </section>
 
-    <!-- ------------------ CEREMONIA -->
-    <section class="bg-[#e9e3db] py-20 relative overflow-hidden">
+    <section class="ceremony-section">
+        <div class="fade-top"></div>
+        <div class="fade-bottom"></div>
 
-        <!-- Desvanecido superior -->
-        <div class="absolute top-0 left-0 w-full h-24 
-                    bg-gradient-to-b from-white to-transparent z-10"></div>
-
-        <!-- Desvanecido inferior -->
-        <div class="absolute bottom-0 left-0 w-full h-24 
-                    bg-gradient-to-t from-white to-transparent z-10"></div>
-
-        <!-- Líneas decorativas superiores -->
-        <div class="absolute top-0 left-0 w-full opacity-70">
-            <svg viewBox="0 0 1440 250" class="w-full h-48" preserveAspectRatio="none">
-
-                <path fill="none" stroke="#bfa880" stroke-width="3"
-                    d="M0,150 C300,60 1100,220 1440,130" />
-
-                <path fill="none" stroke="#a8c0b8" stroke-width="2.5"
-                    d="M0,120 C400,200 900,40 1440,140" />
-
-                <path fill="none" stroke="#bfa880" stroke-width="2"
-                    d="M0,170 C350,100 1000,200 1440,110" />
-
-                <path fill="none" stroke="#a8c0b8" stroke-width="1.8"
-                    d="M0,100 C500,180 800,60 1440,160" />
-
-                <path fill="none" stroke="#bfa880" stroke-width="2.2"
-                    d="M0,180 C450,120 900,220 1440,150" />
-
-            </svg>
-        </div>
-
-        <div class="relative max-w-4xl mx-auto text-center px-6">
-
-            <!-- Ícono circular -->
-            <div class="flex justify-center mb-10">
-                <div class="relative w-40 h-40 md:w-48 md:h-48 
-                            rounded-full bg-[#f7f5f2] shadow-xl 
-                            flex items-center justify-center overflow-hidden">
-
-                    <!-- Anillos desordenados -->
-                    <div class="absolute w-[85%] h-[85%] border-2 border-[#bfa880] 
-                                rounded-[60%_40%_55%_45%] rotate-6"></div>
-
-                    <div class="absolute w-[75%] h-[90%] border border-[#a8c0b8] 
-                                rounded-[40%_60%_45%_55%] -rotate-12"></div>
-
-                    <div class="absolute w-[95%] h-[70%] border border-[#bfa880]/60 
-                                rounded-[55%_45%_60%_40%] rotate-3"></div>
-
-                    <div class="absolute w-[70%] h-[70%] border border-[#a8c0b8]/50 
-                                rounded-[45%_55%_50%_50%] -rotate-6"></div>
-
-                    <!-- GIF animado -->
-                    <img src="https://i.gifer.com/1PyX.gif"
-                        class="w-52 md:w-52 object-contain z-10"
-                        alt="decoración">
-
+        <div class="ceremony-container">
+            <div class="icon-circle-wrapper">
+                <div class="icon-circle">
+                    <img src="https://i.gifer.com/1PyX.gif" style="width: 13rem; object-fit: contain; z-index: 10;" alt="decoración">
                 </div>
             </div>    
 
-            <!-- Banner -->
-            <div class="inline-block relative mb-10">
-                <div class="banner-inner text-white px-14 py-4">
-                    <span class="md:text-2xl text-xl tracking-wide">Ceremonia & celebración</span>
+            <div class="banner-wrapper">
+                <div class="banner-inner">
+                    <span>Ceremonia &amp; celebración</span>
                 </div>
             </div>
 
-            <!-- Información -->
-            <div class="space-y-8 text-[#5c5a57]">
-
+            <div class="ceremony-info">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-2">Día</h3>
-                    <p class="text-lg mb-4">Domingo 17 de Mayo </p>
+                    <h3 class="info-title">Día</h3>
+                    <p class="info-text">Domingo 17 de Mayo </p>
 
-                    <h3 class="text-2xl font-semibold mb-2">Hora</h3>
-                    <p class="text-lg mb-4">4:00 pm</p>
+                    <h3 class="info-title">Hora</h3>
+                    <p class="info-text">4:00 pm</p>
 
-                    <h3 class="text-2xl font-semibold mb-2">Lugar</h3>
-                    <p class="text-lg">Ibagué - Tolima</p>
-                    <p class="text-lg">Vereda Cay - Casa 155 Parte Baja <b>"Villa Sara"</b> </p>
+                    <h3 class="info-title">Lugar</h3>
+                    <p class="info-text">Ibagué - Tolima</p>
+                    <p class="info-text">Vereda Cay - Casa 155 Parte Baja <b>"Villa Sara"</b> </p>
 
-                    <!-- Mapa -->
-                    <div class="mt-6 max-w-xs mx-auto">
-
-                        <!-- Contenedor del mapa -->
-                        <div class="rounded-2xl overflow-hidden shadow-lg border z-30">
+                    <div class="map-container">
+                        <div class="map-frame">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4065.7853828940506!2d-75.2631839!3d4.460015999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c39baffbb5b1%3A0xab3762df28b4b18a!2sFinca%20Villa%20Sara%20-%20Eventos%20Vereda%20Cay!5e1!3m2!1ses-419!2sco!4v1778690879921!5m2!1ses-419!2sco"
-                                class="w-full h-48"
-                                style="border:0;"
-                                allowfullscreen=""
+                                class="map-iframe"
                                 loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
-
                         </div>
 
-                        <!-- Nombre del lugar -->
-                        <div class="bg-white shadow-md rounded-xl mt-3 p-3 text-center">
-                            <p class="font-semibold text-[#5c5a57]">
+                        <div class="map-card">
+                            <p style="font-weight: 600; color: #5c5a57; margin: 0;">
                                 Salón de Eventos Campestre
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
 
-        <!-- Flores decorativas esquina 2 (abajo, secuenciales) -->
-        <img src="images/flor2.png"
-            class="absolute bottom-0 right-0 w-[15rem] opacity-100 hidden md:block fade-up delay-100"
-            alt="flor2">
-        <img src="images/flor1.png"
-            class="absolute bottom-0 right-0 w-[15rem] opacity-40 hidden md:block fade-up delay-200"
-            alt="flor1">
-        <img src="images/flor3.png"
-            class="absolute bottom-0 right-0 w-[15rem] opacity-40 hidden md:block fade-up delay-300"
-            alt="flor3">
+        <img src="images/flor2.png" class="flower-bottom fade-up delay-100 responsive-flower" style="display: none;" alt="flor2">
+        <img src="images/flor1.png" class="flower-bottom fade-up delay-200 responsive-flower" style="display: none;" alt="flor1">
+        <img src="images/flor3.png" class="flower-bottom fade-up delay-300 responsive-flower" style="display: none;" alt="flor3">
 
-            <!-- Plantas decorativas sección -->
-            <div id="plantsSection"
-                class="absolute md:flex hidden left-0 bottom-0 w-[160px] md:w-[220px] opacity-70 pointer-events-none">
-
-                <svg viewBox="0 0 200 500" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-
-                    <!-- Tallo principal -->
-                    <path d="M120 500 C100 420, 150 350, 110 250 C90 200, 130 120, 100 0"
-                        stroke="#bfa880"
-                        stroke-width="3"
-                        fill="none"/>
-
-                    <!-- Hojas finas -->
-                    <path d="M110 360 C170 340, 170 300, 120 320"
-                        fill="#cfded6"/>
-
-                    <path d="M95 300 C30 280, 40 240, 95 260"
-                        fill="#a8c0b8"/>
-
-                    <path d="M110 200 C170 180, 160 150, 120 170"
-                        fill="#d6c3a1"/>
-
-                    <path d="M100 140 C40 130, 50 90, 95 110"
-                        fill="#bfa880"/>
-
-                </svg>
-            </div>
-
-    </section>
-
-    <!-- ------------------ GALERY -->
-    <section class="relative overflow-hidden">
-
-        <!-- Contenido -->
-        <div class="relative z-10 text-center bg-imge py-10 mx-auto">
-            <!-- Desvanecido superior -->
-            <div class="absolute top-0 left-0 w-full h-24 
-                    bg-gradient-to-b from-white to-transparent z-99"></div>
-
-            <!-- Desvanecido inferior -->
-            <div class="absolute bottom-0 left-0 w-full h-24 
-                    bg-gradient-to-t from-white to-transparent z-10"></div>
-
-            <!-- Título -->
-            <h2 class="text-3xl md:text-4xl mt-32 font-semibold text-gray-800 mb-6">
-                Retratos de Nuestro Amor
-            </h2>
-
-            <!-- Subtítulo -->
-            <p class="text-lg md:text-2xl text-[#bfa880] font-light mb-12">
-                Un minuto, un segundo, un instante que queda en la eternidad
-            </p>
-
-            <!-- Ícono -->
-            <div class="flex justify-center mb-16">
-                <div class="w-20 h-20 rounded-full border-2 border-[#bfa880] flex items-center justify-center text-[#bfa880] text-3xl">
-                    <img src="https://cdn.pixabay.com/animation/2023/06/13/15/13/15-13-23-8_512.gif" alt="">
-                </div>
-            </div>
-
-            <!-- Carrusel 3 visibles -->
-            <div class="relative w-full mx-auto overflow-hidden px-6 md:px-0">
-
-                <!-- Slides -->
-                <div id="carousel" class="flex transition-transform duration-700 ease-in-out">
-
-                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
-                        <img src="images/galery1.jpeg"
-                            class="w-full h-[20rem] object-cover shadow-lg" 
-                            style="filter: sepia(0.4) grayscale(0.3) contrast(1.6) brightness(0.8);">
-                    </div>
-
-                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
-                        <img src="images/galery2.jpeg"
-                            class="w-full h-[20rem] object-cover shadow-lg"
-                            style="filter: sepia(0.4) grayscale(0.3) contrast(1.6) brightness(0.8);">
-                    </div>
-
-                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
-                        <img src="images/galery3.jpeg"
-                            class="w-full h-[20rem] object-cover shadow-lg"
-                            style="filter: sepia(0.4) grayscale(0.3) contrast(1.6) brightness(0.8);">
-                    </div>
-
-                    <div class="w-[85%] md:w-1/3 bg-white flex-shrink-0 p-3">
-                        <img src="images/galery4.jpeg"
-                            class="w-full h-[20rem] object-cover shadow-lg"
-                            style="filter: sepia(0.4) grayscale(0.3) contrast(1.6) brightness(0.8);">
-                    </div>
-
-                </div>
-
-                <!-- Botón izquierda -->
-                <button onclick="prevSlide()"
-                    class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 w-9 h-9 rounded-full shadow-md flex items-center justify-center">
-                    ❮
-                </button>
-
-                <!-- Botón derecha -->
-                <button onclick="nextSlide()"
-                    class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 w-9 h-9 rounded-full shadow-md flex items-center justify-center">
-                    ❯
-                </button>
-
-            </div>
-
+        <div id="plantsSection" class="plants-svg-wrapper">
+            <svg viewBox="0 0 200 500" fill="none">
+                <path d="M120 500 C100 420, 150 350, 110 250 C90 200, 130 120, 100 0" stroke="#bfa880" stroke-width="3" fill="none"/>
+                <path d="M110 360 C170 340, 170 300, 120 320" fill="#cfded6"/>
+                <path d="M95 300 C30 280, 40 240, 95 260" fill="#a8c0b8"/>
+                <path d="M110 200 C170 180, 160 150, 120 170" fill="#d6c3a1"/>
+                <path d="M100 140 C40 130, 50 90, 95 110" fill="#bfa880"/>
+            </svg>
         </div>
     </section>
 
-    <!-- ------------------ VESTIMENTA -->
-    <section class="bg-[#f7f5f2] py-24 relative overflow-hidden">
+    <section class="gallery-section">
+        <div class="bg-imge">
+            <div class="fade-top"></div>
+            <div class="fade-bottom"></div>
 
-        <!-- Desvanecido superior -->
-        <div class="absolute top-0 left-0 w-full h-24 
-                    bg-gradient-to-b from-white to-transparent"></div>
+            <h2 class="gallery-title">Retratos de Nuestro Amor</h2>
+            <p class="gallery-subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
 
-        <!-- Desvanecido inferior -->
-        <div class="absolute bottom-0 left-0 w-full h-24 
-                    bg-gradient-to-t from-white to-transparent"></div>
+            <div class="gallery-icon-wrapper">
+                <div class="gallery-icon-circle">
+                    <img src="https://cdn.pixabay.com/animation/2023/06/13/15/13/15-13-23-8_512.gif" alt="" style="width: 100%;">
+                </div>
+            </div>
 
-        <!-- Líneas decorativas superiores -->
-        <div class="absolute top-0 left-0 w-full opacity-40">
-            <svg viewBox="0 0 1440 200" class="w-full h-32" preserveAspectRatio="none">
-                <path fill="none" stroke="#bfa880" stroke-width="3"
-                    d="M0,120 C300,60 1140,180 1440,100" />
-                <path fill="none" stroke="#a8c0b8" stroke-width="3"
-                    d="M0,90 C360,160 1080,40 1440,130" />
-            </svg>
+            <div class="carousel-container">
+                <div id="carousel" class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="images/galery1.jpeg" class="carousel-img" alt="Foto 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/galery2.jpeg" class="carousel-img" alt="Foto 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/galery3.jpeg" class="carousel-img" alt="Foto 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/galery4.jpeg" class="carousel-img" alt="Foto 4">
+                    </div>
+                </div>
+
+                <button onclick="prevSlide()" class="carousel-btn btn-left">❮</button>
+                <button onclick="nextSlide()" class="carousel-btn btn-right">❯</button>
+            </div>
         </div>
+    </section>
 
-        <!-- Plantas izquierda -->
-        <div class="absolute left-0 bottom-0 opacity-60 animate-plant">
-            <svg width="140" height="220" viewBox="0 0 200 300" fill="none">
-                <path d="M100 300 C80 200, 120 150, 100 50" stroke="#bfa880" stroke-width="3" fill="none"/>
-                <ellipse cx="85" cy="180" rx="25" ry="12" fill="#a8c0b8"/>
-                <ellipse cx="115" cy="120" rx="25" ry="12" fill="#bfa880"/>
-            </svg>
-        </div>
+    <section class="dresscode-section">
+        <div class="fade-top"></div>
+        <div class="fade-bottom"></div>
 
-        <!-- Plantas derecha -->
-        <div class="absolute right-0 bottom-0 opacity-60 animate-plant-delayed">
-            <svg width="140" height="220" viewBox="0 0 200 300" fill="none">
-                <path d="M100 300 C120 200, 80 150, 100 50" stroke="#bfa880" stroke-width="3" fill="none"/>
-                <ellipse cx="115" cy="180" rx="25" ry="12" fill="#a8c0b8"/>
-                <ellipse cx="85" cy="120" rx="25" ry="12" fill="#bfa880"/>
-            </svg>
-        </div>
+        <div class="dresscode-container">
+            <h2 class="dresscode-title" style="color: #5c5a57; margin-bottom: 1.5rem;">Código de Vestimenta</h2>
+            <div style="height: 1px; width: 6rem; background-color: #bfa880; margin: 0 auto 3rem auto;"></div>
 
-        <div class="relative max-w-4xl mx-auto px-6 text-center">
-
-            <!-- Título -->
-            <h2 class="text-3xl md:text-4xl font-semibold text-[#5c5a57] mb-6">
-                Código de Vestimenta
-            </h2>
-
-            <div class="h-px w-24 bg-[#bfa880] mx-auto mb-12"></div>
-
-            <!-- Card -->
-            <div class="bg-white shadow-xl rounded-2xl p-10 md:p-14 
-                        max-w-2xl mx-auto border border-[#e6dfd6] relative overflow-hidden">
-
-                <!-- Líneas internas decorativas -->
-                <svg class="absolute inset-0 w-full h-full opacity-10 pointer-events-none"
-                    viewBox="0 0 400 400" preserveAspectRatio="none">
-                    <path d="M0,200 C100,150 300,250 400,200" 
-                        stroke="#bfa880" stroke-width="4" fill="none"/>
-                    <path d="M0,150 C120,220 280,100 400,170" 
-                        stroke="#a8c0b8" stroke-width="4" fill="none"/>
-                </svg>
-
-                <!-- Icono SVG vestimenta -->
-                <div class="flex justify-center mb-6 relative z-10">
-                    <div class="w-16 h-16 text-[#bfa880]">
+            <div class="dresscode-card">
+                <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                    <div style="width: 4rem; height: 4rem; color: #bfa880;">
                         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M16 10 L24 6 L32 14 L40 6 L48 10 L44 22 L36 18 L32 22 L28 18 L20 22 Z"/>
                             <path d="M24 22 L24 50 L40 50 L40 22"/>
@@ -475,348 +216,150 @@
                     </div>
                 </div>
 
-                <h3 class="text-2xl md:text-3xl font-semibold text-[#bfa880] mb-4 relative z-10">
-                    Casual Elegante
-                </h3>
-
-                <p class="text-lg md:text-xl text-[#5c5a57] leading-relaxed relative z-10">
-                    Lo más importante es tu presencia; ven elegante pero lo 
-                    suficientemente cómodo para disfrutar.
+                <h3 class="dresscode-subtitle" style="color: #bfa880; margin-bottom: 1rem;">Casual Elegante</h3>
+                <p style="color: #5c5a57; font-size: 1.125rem; line-height: 1.625; margin: 0;">
+                    Lo más importante es tu presencia; ven elegante pero lo suficientemente cómodo para disfrutar.
                 </p>
-
             </div>
         </div>
     </section>
 
-    <!-- ------------------ LLUVIA DE SOBRES -->
-    <section class="relative bg-[#fff] py-24 overflow-hidden">
+    <section class="envelopes-section">
+        <div class="fade-bottom"></div>
 
-        <!-- Decoración hoja derecha -->
-        <div class="absolute right-0 top-0 h-full flex items-center opacity-40 pointer-events-none">
-            <img src="https://images.vexels.com/media/users/3/222665/isolated/preview/4ee562332310f401b2fd607e311592d3-blaetter-verzweigen-sich-ohne-farbige-handgezeichnete-blaetter.png?w=360" alt="decoración hojas" class="h-[80%] object-contain">
-        </div>
-
-        <!-- Desvanecido inferior -->
-        <div class="absolute bottom-0 left-0 w-full h-24 
-                    bg-gradient-to-t from-white to-transparent"></div>
-
-        <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
-
-            <h2 class="text-5xl font-serif text-gray-800 mb-6">
-                Lluvia de sobres
-            </h2>
-
-            <p class="text-[#b6a46d] text-lg mb-8">
-            Si deseas regalarnos algo más que tu hermosa presencia...
+        <div style="max-width: 56rem; margin: 0 auto; text-align: center; padding: 0 1.5rem; position: relative; z-index: 10;">
+            <h2 style="font-size: 3rem; font-family: serif; color: #1f2937; margin-bottom: 1.5rem;">Lluvia de sobres</h2>
+            <p style="color: #b6a46d; font-size: 1.125rem; margin-bottom: 2rem;">
+                Si deseas regalarnos algo más que tu hermosa presencia...
             </p>
 
-            <!-- Icono sobre -->
-            <div class="flex justify-center mb-10">
-            <svg width="120" height="120" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <!-- Sombra -->
-                <ellipse cx="100" cy="170" rx="60" ry="12" fill="#000" opacity="0.08"/>
-                
-                <!-- Cuerpo del sobre -->
-                <rect x="40" y="70" width="120" height="80" rx="8" fill="#BFA880"/>
-                
-                <!-- Solapa del sobre -->
-                <polygon points="40,70 100,20 160,70" fill="#A88F6C"/>
-                
-                <!-- Línea de detalle -->
-                <line x1="40" y1="70" x2="160" y2="70" stroke="#ffffff" stroke-width="2"/>
-                
-                <!-- Cierre/triángulo decorativo -->
-                <polygon points="60,70 100,45 140,70" fill="#ffffff" opacity="0.7"/>
-            </svg>
+            <div style="display: flex; justify-content: center; margin-bottom: 2.5rem;">
+                <svg width="120" height="120" viewBox="0 0 200 200">
+                    <ellipse cx="100" cy="170" rx="60" ry="12" fill="#000" opacity="0.08"/>
+                    <rect x="40" y="70" width="120" height="80" rx="8" fill="#BFA880"/>
+                    <polygon points="40,70 100,20 160,70" fill="#A88F6C"/>
+                    <line x1="40" y1="70" x2="160" y2="70" stroke="#ffffff" stroke-width="2"/>
+                    <polygon points="60,70 100,45 140,70" fill="#ffffff" opacity="0.7"/>
+                </svg>
             </div>
 
-            <!-- Botón -->
-            <button 
-                onclick="openModal()"
-                class="bg-white px-8 py-3 rounded-full shadow-md text-[#b6a46d] tracking-wide hover:shadow-lg transition duration-300">
-                VER MÁS
-            </button>
-
+            <button onclick="openModal()" class="btn-envelope">VER MÁS</button>
         </div>
     </section>
 
-    <!-- ------------------ RESERVA -->
-    <section class="relative w-full overflow-hidden">
+    <section class="parallax-section">
+        <div class="hero-overlay"></div>
 
-        <!-- Overlay oscuro -->
-        <div class="absolute inset-0 bg-black/70"></div>
-
-        <!-- Líneas decorativas sobre la montaña -->
-        <div class="absolute top-0 left-0 w-full pointer-events-none z-20">
-            <svg viewBox="0 0 1440 160" class="w-full h-32" preserveAspectRatio="none">
-                
-                <!-- Línea 1 -->
-                <path d="M0,90 C300,40 1100,150 1440,80"
-                    fill="none"
-                    stroke="#bfa880"
-                    stroke-width="3"
-                    opacity="0.6" />
-
-                <!-- Línea 2 -->
-                <path d="M0,60 C400,130 900,10 1440,100"
-                    fill="none"
-                    stroke="#ffffff"
-                    stroke-width="2"
-                    opacity="0.4" />
-
-                <!-- Línea 3 -->
-                <path d="M0,110 C500,20 1000,180 1440,70"
-                    fill="none"
-                    stroke="#a8c0b8"
-                    stroke-width="4"
-                    opacity="0.5" />
-
-            </svg>
-        </div>
-
-        <!-- Forma superior -->
-        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
-            <svg viewBox="0 0 1440 120" class="w-full h-24" preserveAspectRatio="none">
-            <path fill="#fff" d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32V0H0Z"></path>
-            </svg>
-        </div>
-
-        <!-- Imagen Parallax -->
-        <div 
-            class="h-[800px] bg-cover bg-center no-fixed-mobile flex items-center justify-center"
-            style="background-image: url('/images/finalimage.jpeg'); background-position: right; background-repeat: no-repeat;">
-
-            <div class="absolute inset-0"></div>
-
-            <!-- Contenido encima -->
-            <div class="relative z-10 text-center text-white px-6">
-                <h2 class="text-2xl md:text-3xl font-serif mb-4">
+        <div class="parallax-bg">
+            <div style="position: relative; z-index: 10; text-align: center; color: #ffffff; padding: 0 1.5rem;">
+                <h2 style="font-size: 1.875rem; font-family: serif; margin-bottom: 1rem;">
                     Lo más importante de este gran día es compartirlo con las personas que amamos. 
                 </h2>
-                <p class="max-w-2xl mx-auto text-lg opacity-90">
+                <p style="max-w: 42rem; margin: 0 auto; font-size: 1.125rem; opacity: 0.9;">
                     ¡Reserva la fecha! Estamos contando los días para celebrar juntos.
                 </p>
 
-                <!-- SVG Reserva -->
-                <div class="flex justify-center mt-8">
-                    <svg class="w-16 h-16 text-[#bfa880] animate-pulse" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M8 7V3m8 4V3m-9 8h10m-13 9h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                    <svg style="width: 4rem; height: 4rem; color: #bfa880;" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10m-13 9h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                 </div>
 
-                <!-- Botón -->
-                <div class="mt-6">
-                    <button onclick="openModalTwo()"
-                        class="bg-[#bfa880] hover:bg-[#a88f6c] text-white px-8 py-3 rounded-full shadow-lg transition duration-300">
-                        Confirmar asistencia a la ceremonia
-                    </button>
+                <div style="margin-top: 1.5rem;">
+                    <button onclick="openModalTwo()" class="btn-reserve">Confirmar asistencia a la ceremonia</button>
                 </div>
-
             </div>
         </div>
-
-        <!-- Forma inferior -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
-            <svg viewBox="0 0 1440 120" class="w-full h-24" preserveAspectRatio="none">
-            <path fill="#fff" d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32V0H0Z"></path>
-            </svg>
-        </div>
-
     </section>
 
-    <!-- ------------------ FOOTER -->
-    <section class="relative w-full h-screen">
-        <!-- Líneas decorativas superiores -->
-        <div class="absolute top-0 left-0 w-full opacity-70">
-            <svg viewBox="0 0 1440 250" class="w-full h-48" preserveAspectRatio="none">
-
-                <path fill="none" stroke="#bfa880" stroke-width="3"
-                    d="M0,150 C300,60 1100,220 1440,130" />
-
-                <path fill="none" stroke="#a8c0b8" stroke-width="2.5"
-                    d="M0,120 C400,200 900,40 1440,140" />
-
-                <path fill="none" stroke="#bfa880" stroke-width="2"
-                    d="M0,170 C350,100 1000,200 1440,110" />
-
-                <path fill="none" stroke="#a8c0b8" stroke-width="1.8"
-                    d="M0,100 C500,180 800,60 1440,160" />
-
-                <path fill="none" stroke="#bfa880" stroke-width="2.2"
-                    d="M0,180 C450,120 900,220 1440,150" />
-
-            </svg>
-        </div>
-        <!-- Líneas decorativas sobre la montaña -->
-        <div class="absolute top-0 left-0 w-full pointer-events-none z-20">
-            <svg viewBox="0 0 1440 160" class="w-full h-32" preserveAspectRatio="none">
-                
-                <!-- Línea 1 -->
-                <path d="M0,90 C300,40 1100,150 1440,80"
-                    fill="none"
-                    stroke="#bfa880"
-                    stroke-width="3"
-                    opacity="0.6" />
-
-                <!-- Línea 2 -->
-                <path d="M0,60 C400,130 900,10 1440,100"
-                    fill="none"
-                    stroke="#ffffff"
-                    stroke-width="2"
-                    opacity="0.4" />
-
-                <!-- Línea 3 -->
-                <path d="M0,110 C500,20 1000,180 1440,70"
-                    fill="none"
-                    stroke="#a8c0b8"
-                    stroke-width="4"
-                    opacity="0.5" />
-
-            </svg>
-        </div>
-        <!-- Fondo con overlay -->
-        <div 
-            class="absolute inset-0 bg-center"
-            style="background-image: url('/images/footer2.png'); background-size: cover;
-            background-position: right;
-            background-attachment: fixed;">
-            <!-- Overlay para aclarar la imagen -->
-            <div class="absolute inset-0 bg-white bg-opacity-30"></div>
+    <section class="footer-section">
+        <div class="footer-bg">
+            <div class="footer-overlay"></div>
         </div>
 
-        <!-- Contenido centrado -->
-        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-            <h1 class="text-6xl md:text-8xl font-bold mb-10 bg-gradient-to-r from-[#bfa880] via-[#333] to-[#a8c0b8] text-transparent bg-clip-text drop-shadow-lg">
-                BODA
-            </h1>
-            <p class="mt-4 text-2xl md:text-4xl text-gray-700 tracking-widest drop-shadow-sm">
-                Antoni & Karen
+        <div class="footer-content">
+            <h1 class="footer-title">BODA</h1>
+            <p style="font-size: 1.875rem; color: #374151; letter-spacing: 0.1em; margin: 0;">
+                Antoni &amp; Karen
             </p>
         </div>
-
     </section>
 
-    <!-- MODAL 1-->
-    <div id="giftModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden items-center justify-center z-50">
-
-        <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 relative animate-fadeIn">
-
-            <!-- Botón cerrar -->
-            <button onclick="closeModal()" 
-                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl">
-            ✕
-            </button>
-            
-                <!-- Ícono circular -->
-                <div class="flex justify-center mb-10">
-                    <div class="relative w-40 h-40 md:w-32 md:h-32 
-                                rounded-full bg-[#f7f5f2] shadow-xl 
-                                flex items-center justify-center overflow-hidden">
-
-                        <!-- Anillos desordenados -->
-                        <div class="absolute w-[85%] h-[85%] border-2 border-[#bfa880] 
-                                    rounded-[60%_40%_55%_45%] rotate-6"></div>
-
-                        <div class="absolute w-[75%] h-[90%] border border-[#a8c0b8] 
-                                    rounded-[40%_60%_45%_55%] -rotate-12"></div>
-
-                        <div class="absolute w-[95%] h-[70%] border border-[#bfa880]/60 
-                                    rounded-[55%_45%_60%_40%] rotate-3"></div>
-
-                        <div class="absolute w-[70%] h-[70%] border border-[#a8c0b8]/50 
-                                    rounded-[45%_55%_50%_50%] -rotate-6"></div>
-
-                        <!-- GIF animado -->
-                        <img src="https://static.wixstatic.com/media/8205d6_6c963b71d48d4211b569f06dabe630b0~mv2.gif"
-                            class="w-20 md:w-20 object-contain z-10"
-                            alt="decoración">
-
-                    </div>
-                </div> 
-
-
-            <p class="text-gray-600 text-center mb-6">
-                Tu presencia es nuestro mejor regalo.  
-                Pero si deseas hacernos un obsequio, puedes hacerlo aquí:
+    <div id="giftModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button onclick="closeModal()" class="modal-close">✕</button>
+            <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                Tu presencia es nuestro mejor regalo. But si deseas hacernos un obsequio, puedes hacerlo aquí:
             </p>
-
-            <div class="bg-[#f8f6f2] p-4 rounded-lg text-center text-xl text-gray-700">
-                <p><strong>Lluvia de sobres</strong></p>
-
+            <div style="background-color: #f8f6f2; padding: 1rem; border-radius: 0.5rem;">
+                <p style="margin: 0;"><strong>Lluvia de sobres</strong></p>
             </div>
-
         </div>
     </div>
 
-    <!-- MODAL 2-->
-    <div id="reservaModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+    <div id="reservaModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button onclick="closeModalTwo()" class="modal-close">×</button>
 
-        <div class="bg-white w-[90%] md:w-[450px] rounded-[40px] p-10 relative text-center shadow-2xl">
-
-            <!-- Botón cerrar -->
-            <button onclick="closeModalTwo()" 
-                class="absolute top-4 right-6 text-gray-400 hover:text-black text-2xl">
-                &times;
-            </button>
-
-            <h3 class="text-2xl font-semibold mb-4 text-[#5c5a57]">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #5c5a57;">
                 ¿Asistes a la ceremonia?
             </h3>
 
-            <p class="text-gray-500 mb-8">
+            <p style="color: #6b7280; margin-bottom: 2rem;">
                 Confirma tu asistencia agregando la fecha a tu calendario.
             </p>
 
-            <!-- BOTÓN PRINCIPAL -->
             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Antoni+y+Karen&dates=20260517T210000Z/20260517T230000Z&details=Reserva+la+fecha+para+nuestra+boda&location=Ibagué+-+Tolima"
-                target="_blank"
-                class="block w-full bg-[#bfa880] hover:bg-[#a88f6c] text-white py-3 rounded-full transition duration-300 shadow-lg">
+               target="_blank" class="btn-calendar">
                 Agregar a Google Calendar
             </a>
-
         </div>
     </div>
 
+    <button id="musicBtn" class="music-btn">
+        <img id="musicGif" src="https://cdn-icons-png.flaticon.com/512/2469/2469072.png" alt="Música" style="width: 2rem; height: 2rem;"/>
+    </button>
+
+    <audio id="bgMusic" loop>
+        <source src="music/fonseca.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
     <script>
-        
         let index = 0;
 
         function updateCarousel() {
             const carousel = document.getElementById("carousel");
             const slides = carousel.children;
             const slideWidth = slides[0].offsetWidth;
-
             carousel.style.transform = `translateX(-${index * slideWidth}px)`;
         }
 
         function nextSlide() {
             const carousel = document.getElementById("carousel");
-            const slides = carousel.children;
-
-            if (index < slides.length - 1) {
-                index++;
-            } else {
-                index = 0;
-            }
-
+            if (index < carousel.children.length - 1) index++;
+            else index = 0;
             updateCarousel();
         }
 
         function prevSlide() {
             const carousel = document.getElementById("carousel");
-            const slides = carousel.children;
-
-            if (index > 0) {
-                index--;
-            } else {
-                index = slides.length - 1;
-            }
-
+            if (index > 0) index--;
+            else index = carousel.children.length - 1;
             updateCarousel();
         }
 
         window.addEventListener("resize", updateCarousel);
+
+        function openModal() {
+            document.getElementById("giftModal").classList.remove("hidden");
+            document.getElementById("giftModal").classList.add("flex");
+        }
+
+        function closeModal() {
+            document.getElementById("giftModal").classList.add("hidden");
+            document.getElementById("giftModal").classList.remove("flex");
+        }
 
         function openModalTwo() {
             document.getElementById("reservaModal").classList.remove("hidden");
@@ -828,49 +371,32 @@
             document.getElementById("reservaModal").classList.remove("flex");
         }
 
-        // Cerrar al hacer click fuera
         window.onclick = function(event) {
-            const modal = document.getElementById("reservaModal");
-            if (event.target === modal) {
-                closeModal();
+            const modal1 = document.getElementById("giftModal");
+            const modal2 = document.getElementById("reservaModal");
+            if (event.target === modal1) closeModal();
+            if (event.target === modal2) closeModalTwo();
+        }
+
+        // Música
+        const music = document.getElementById("bgMusic");
+        const btn = document.getElementById("musicBtn");
+        const gif = document.getElementById("musicGif");
+        music.volume = 0.3;
+        let isPlaying = false;
+
+        btn.addEventListener("click", () => {
+            if (isPlaying) {
+                music.pause();
+                isPlaying = false;
+                gif.style.opacity = 0.5;
+            } else {
+                music.play().catch(() => {});
+                isPlaying = true;
+                gif.style.opacity = 1;
             }
-        }
+        });
     </script>
-
     <script src="js/script.js"></script>
-
-    <!-- ------------------ BOTÓN DE MÚSICA CON GIF ------------------ -->
-    <button id="musicBtn" class="fixed top-4 right-4 w-12 h-12 bg-white/80 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition">
-        <!-- GIF animado de música -->
-        <img id="musicGif" src="https://cdn-icons-png.flaticon.com/512/2469/2469072.png" alt="Música" class="w-8 h-8"/>
-    </button>
-
-    <!-- ------------------ AUDIO ------------------ -->
-    <audio id="bgMusic" loop>
-        <source src="music/fonseca.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-    </audio>
-
-    <script>
-    const music = document.getElementById("bgMusic");
-    const btn = document.getElementById("musicBtn");
-    const gif = document.getElementById("musicGif");
-
-    music.volume = 0.3; // 30% volumen
-    let isPlaying = false;
-
-    btn.addEventListener("click", () => {
-        if (isPlaying) {
-            music.pause();
-            isPlaying = false;
-            gif.style.opacity = 0.5; // opcional: se ve más apagado cuando está en pausa
-        } else {
-            music.play().catch(() => {});
-            isPlaying = true;
-            gif.style.opacity = 1; // opacidad completa cuando suena
-        }
-    });
-    </script>
-
 </body>
 </html>

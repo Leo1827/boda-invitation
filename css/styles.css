@@ -1,280 +1,702 @@
+/* Reset básico y Tipografía */
+* {
+    box-sizing: border-box;
+}
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Playfair Display', serif;
 }
 
-/* Preloader centrado con fondo semi-blanco */
-  #preloader {
+/* Preloader */
+#preloader {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
     overflow: hidden;
-  }
+}
 
-  /* Corazón central pequeño 30px y palpitando */
-  .heart {
+.heart {
     position: relative;
     width: 30px;
     height: 30px;
     background-color: #BFA880;
     transform: rotate(-45deg);
     animation: pulse 1s infinite;
-  }
+}
 
-  .heart::before,
-  .heart::after {
+.heart::before,
+.heart::after {
     content: '';
     position: absolute;
     width: 30px;
     height: 30px;
     background-color: #BFA880;
     border-radius: 50%;
-  }
+}
 
-  .heart::before { top: -15px; left: 0; }
-  .heart::after  { top: 0; left: 15px; }
+.heart::before { top: -15px; left: 0; }
+.heart::after  { top: 0; left: 15px; }
 
-  /* Animación de latido */
-  @keyframes pulse {
+@keyframes pulse {
     0%, 100% { transform: rotate(-45deg) scale(1); }
     50% { transform: rotate(-45deg) scale(1.3); }
-  }
-
-  /* Corazoncitos que flotan */
-  .small-heart {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: #BFA880;
-    transform: rotate(-45deg);
-    opacity: 0;
-    animation: fly 2s forwards;
-  }
-
-  .small-heart::before,
-  .small-heart::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: #BFA880;
-    border-radius: 50%;
-  }
-
-  .small-heart::before { top: -6px; left: 0; }
-  .small-heart::after  { top: 0; left: 6px; }
+}
 
 /* Animaciones */
-    @keyframes fadeDown {
-        0% { opacity: 0; transform: translateY(-50px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-    @keyframes fadeUp {
-        0% { opacity: 0; transform: translateY(50px) rotate(90deg); }
-        100% { opacity: 1; transform: translateY(0) rotate(90deg); }
-    }
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-    @keyframes bounceDown {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(10px); }
-        60% { transform: translateY(5px); }
-    }
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(5px); }
+}
 
-    /* Clases de animación */
-    .fade-down { animation: fadeDown 1s ease forwards; }
-    .fade-up { animation: fadeUp 1s ease forwards; }
-    .bounce-down { animation: bounceDown 2s infinite; }
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
 
-    /* Delays para que aparezcan en secuencia */
-    .delay-100 { animation-delay: 0.2s; }
-    .delay-200 { animation-delay: 0.4s; }
-    .delay-300 { animation-delay: 0.6s; }
-    .delay-400 { animation-delay: 0.8s; }
-    .delay-500 { animation-delay: 1s; }
+.fade-down { animation: fadeDown 1s ease forwards; }
+.fade-up { animation: fadeUp 1s ease forwards; }
+.bounce-down { animation: bounceDown 2s infinite; }
 
+.delay-100 { animation-delay: 0.2s; }
+.delay-200 { animation-delay: 0.4s; }
+.delay-300 { animation-delay: 0.6s; }
 
+/* Section: Hero */
+.hero-section {
+    position: relative;
+    height: 960px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    overflow: hidden;
+    background-image: url('../images/principal.jpg');
+    background-size: cover;
+    background-position: right;
+}
 
-  /* Animación de flotación hacia arriba */
-  @keyframes fly {
-    0% {
-      transform: translate(0,0) rotate(-45deg) scale(0.5);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(calc(var(--x, 0px)), calc(var(--y, -50px))) rotate(-45deg) scale(0.5);
-      opacity: 0;
-    }
-  }
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
+.hero-fade-bottom {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 14rem;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), #ffffff);
+}
 
+.flower-top {
+    position: absolute;
+    top: 0; left: 0;
+    width: 15rem;
+    opacity: 0.4;
+}
 
-/* ================= SECCION CONTADOR ================= */
+.flower-bottom {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 15rem;
+    opacity: 0.4;
+}
 
-    .countdown-section {
-        position: relative;
-        background: #e9e3db;
-        padding-top: 100px;
-        padding-bottom: 120px;
-    }
+.hero-content {
+    position: relative;
+    text-align: center;
+    padding: 0 1.5rem;
+    max-width: 48rem;
+}
 
-    /* CORTA LA IMAGEN SUPERIOR */
-    .mountain-cut {
-        position: absolute;
-        top: -120px;
-        left: 0;
-        width: 100%;
-        line-height: 0;
-    }
+.hero-date-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
 
-    .mountain-cut svg {
-        width: 100%;
-        height: 200px;
-        display: block;
-    }
+.line-short {
+    height: 1px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
 
+.hero-date {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
 
-    /* Círculo central */
-    .countdown-wrapper {
-        position: relative;
-        width: 250px;
-        height: 250px;
-        margin: auto;
-    }
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
 
-    /* Anillos dorados */
-    .countdown-wrapper::before,
-    .countdown-wrapper::after {
-        content: "";
-        position: absolute;
-        border: 2px solid #bfa880;
-        border-radius: 50%;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-    }
+.ampersand-circle {
+    background-color: #BFA880;
+    width: 3rem; height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
 
-    .countdown-wrapper::after {
-        top: -35px;
-        left: -35px;
-        right: -35px;
-        bottom: -35px;
-        opacity: 0.7;
-    }
+.line-wide {
+    height: 1px;
+    width: 8rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0 auto 2rem auto;
+}
 
-    /* Círculo blanco */
-    .countdown-circle {
-        position: absolute;
-        inset: 0;
-        background: #f7f5f2;
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 20px 20px 15px 40px rgba(0,0,0,0.15);
-        text-align: center;
-    }
+.hero-quote {
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.625;
+    max-width: 48rem;
+    margin: 0 auto;
+}
 
-    .countdown-title {
-        font-size: 32px;
-        color: #bfa880;
-        margin-bottom: 15px;
-    }
+.quote-mark { font-size: 3rem; }
+.quote-sub { font-size: 0.875rem; }
 
-    .countdown-time {
-        display: flex;
-        gap: 20px;
-        font-size: 26px;
-        color: #444;
-    }
+.arrow-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
 
-    .countdown-time div {
-        display: flex;
-        flex-direction: column;
-    }
+.icon-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #ffffff;
+}
 
-    .countdown-time span {
-        font-size: 14px;
-        color: #bfa880;
-    }
+/* Section: Countdown */
+.countdown-section {
+    position: relative;
+    background: #ffffff;
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+}
 
-    .countdown-heart {
-        margin-top: 15px;
-        font-size: 80px;
-        color: #bfa880;
-    }
+.separator-wrapper {
+    position: absolute;
+    top: -3rem; left: 0;
+    margin-top: 0.5rem;
+    z-index: 10;
+}
 
-    @keyframes heartbeat {
-        0% { transform: scale(1); }
-        25% { transform: scale(1.15); }
-        40% { transform: scale(1); }
-        60% { transform: scale(1.15); }
-        100% { transform: scale(1); }
-    }
+.separator-img { width: 100%; }
 
-    .countdown-heart {
-        font-size: 2rem;
-        color: #BFA880;
-        animation: heartbeat 1.5s infinite;
-    }
+.countdown-wrapper {
+    position: relative;
+    z-index: 30;
+    margin-top: -10rem;
+}
 
-/* ================= SECCION CEREMONY ================= */
-    .banner-inner {
-        background: #5c5a57;
-        padding: 1rem 3.5rem;
-        border-radius: 6px;
-        position: relative;
-    }
+.countdown-circle {
+    position: relative;
+    width: 280px; height: 280px;
+    margin: auto;
+    background: #f7f5f2;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-    .banner-inner::before,
-    .banner-inner::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 20px;
-        height: 20px;
-        background: #e9e3db; /* color del fondo */
-        border-radius: 50%;
-    }
+.countdown-title {
+    font-size: 2rem;
+    color: #bfa880;
+    margin-bottom: 0.5rem;
+}
 
-    .banner-inner::before {
-        left: -10px;
-    }
+.countdown-time {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    color: #444;
+    align-items: center;
+}
 
-    .banner-inner::after {
-        right: -10px;
-    }
+.countdown-time div {
+    display: flex;
+    flex-direction: column;
+}
 
+.countdown-time strong { font-weight: 700; }
+.countdown-time span { font-size: 0.875rem; color: #bfa880; }
 
-/* ================= SECCION GALLERY ================= */
+.countdown-heart {
+    margin-top: 0.75rem;
+    font-size: 1.5rem;
+    color: #BFA880;
+    animation: heartbeat 1.5s infinite;
+}
 
-.bg-imge{
+/* Section: Ceremony */
+.ceremony-section {
+    background-color: #e9e3db;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.fade-top {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6rem;
+    background: linear-gradient(to bottom, #ffffff, transparent);
+    z-index: 10;
+}
+
+.fade-bottom {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 6rem;
+    background: linear-gradient(to top, #ffffff, transparent);
+    z-index: 10;
+}
+
+.ceremony-container {
+    position: relative;
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.icon-circle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.icon-circle {
+    position: relative;
+    width: 10rem; height: 10rem;
+    border-radius: 9999px;
+    background-color: #f7f5f2;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.banner-inner {
+    background: #5c5a57;
+    color: #ffffff;
+    padding: 1rem 3.5rem;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    letter-spacing: 0.025em;
+    position: relative;
+}
+
+.banner-inner::before,
+.banner-inner::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; height: 20px;
+    background: #e9e3db;
+    border-radius: 50%;
+}
+
+.banner-inner::before { left: -10px; }
+.banner-inner::after { right: -10px; }
+
+.ceremony-info {
+    color: #5c5a57;
+}
+
+.info-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+.info-text { font-size: 1.125rem; margin-bottom: 1rem; margin-top: 0; }
+
+.map-container {
+    margin-top: 1.5rem;
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-frame {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.map-iframe {
+    width: 100%;
+    height: 12rem;
+    border: 0;
+}
+
+.map-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.plants-svg-wrapper {
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 160px;
+    opacity: 0.7;
+    pointer-events: none;
+    display: none;
+}
+
+/* Section: Gallery */
+.gallery-section { position: relative; overflow: hidden; }
+
+.bg-imge {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2.5rem 0;
+    margin: 0 auto;
     background-image: url("../images/fondo2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.gallery-title {
+    font-size: 1.875rem;
+    margin-top: 8rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-subtitle {
+    font-size: 1.125rem;
+    color: #bfa880;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+.gallery-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.gallery-icon-circle {
+    width: 5rem; height: 5rem;
+    border-radius: 9999px;
+    border: 2px solid #bfa880;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 1.5rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 700ms ease-in-out;
+}
+
+.carousel-slide {
+    width: 85%;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    padding: 0.75rem;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    filter: sepia(0.4) grayscale(0.3) contrast(1.6) brightness(0.8);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #1f2937;
+    width: 2.25rem; height: 2.25rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-btn:hover { background-color: #ffffff; }
+.btn-left { left: 0.5rem; }
+.btn-right { right: 0.5rem; }
+
+/* Section: Vestimenta */
+.dresscode-section {
+    background-color: #f7f5f2;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.dresscode-container {
+    position: relative;
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.dresscode-card {
+    background-color: #ffffff;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2.5rem 2.5rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    border: 1px solid #e6dfd6;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section: Lluvia de Sobres */
+.envelopes-section {
+    position: relative;
+    background-color: #ffffff;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.btn-envelope {
+    background-color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    color: #b6a46d;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 300ms;
+}
+
+.btn-envelope:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+
+/* Section: Parallax / Reserva */
+.parallax-section { position: relative; width: 100%; overflow: hidden; }
+
+.parallax-bg {
+    height: 800px;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/finalimage.jpeg');
+}
+
+.btn-reserve {
+    background-color: #bfa880;
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.btn-reserve:hover { background-color: #a88f6c; }
+
+/* Section: Footer */
+.footer-section { position: relative; width: 100%; height: 100vh; }
+
+.footer-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/footer2.png');
+    background-size: cover;
+    background-position: right;
+}
+
+.footer-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.footer-title {
+    font-size: 3.75rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #bfa880;
+}
+
+/* Modales */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modal-card {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 40px;
+    padding: 2.5rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9ca3af;
+    cursor: pointer;
+}
+
+.modal-close:hover { color: #000000; }
+
+.btn-calendar {
+    display: block;
+    width: 100%;
+    background-color: #bfa880;
+    color: #ffffff;
+    padding: 0.75rem 0;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 300ms;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-calendar:hover { background-color: #a88f6c; }
+
+/* Botón flotante de Música */
+.music-btn {
+    position: fixed;
+    top: 1rem; right: 1rem;
+    width: 3rem; height: 3rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 300ms;
+    z-index: 40;
+}
+
+.music-btn:hover { background-color: #ffffff; }
+
+/* Utilidades generales */
+.hidden { display: none !important; }
+.flex { display: flex !important; }
+
+/* Media Queries (Diseño Responsivo) */
 @media (min-width: 768px) {
-    #hero {
-        background-attachment: fixed;
-    }
-
-    #footerBg {
-        background-position: center !important; /* centra la imagen en móviles */
-        background-size: auto 100%;             /* ajusta altura, evita zoom brusco */
-    }
-
-    .no-fixed-mobile {
-        background-attachment: scroll !important; /* en móvil, no fija */
-    }
-
+    #hero { background-attachment: fixed; }
+    
+    .line-short { width: 150px; }
+    .hero-date { font-size: 1.875rem; }
+    .hero-title { font-size: 4.5rem; }
+    .ampersand-circle { width: 4rem; height: 4rem; font-size: 2.25rem; }
+    .line-wide { width: 500px; }
+    .hero-quote { font-size: 1.875rem; }
+    
+    .separator-wrapper { top: -13rem; }
+    
+    .icon-circle { width: 12rem; height: 12rem; }
+    .banner-inner { font-size: 1.5rem; }
+    .plants-svg-wrapper { display: flex; width: 220px; }
+    .responsive-flower { display: block !important; }
+    
+    .gallery-title { font-size: 2.25rem; }
+    .gallery-subtitle { font-size: 1.5rem; }
+    .carousel-container { padding: 0; }
+    .carousel-slide { width: 33.333333%; }
+    
+    .dresscode-card { padding: 3.5rem; }
+    .dresscode-title { font-size: 1.875rem; }
+    .dresscode-subtitle { font-size: 1.875rem; }
+    
+    .footer-title { font-size: 6rem; }
 }
